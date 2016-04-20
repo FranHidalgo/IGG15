@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TMPS00015</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<!----menu--->
+<link rel="stylesheet" href="css/superfish.css" media="screen">
+<script src="js/jquery-1.9.0.min.js"></script>
+<script src="js/hoverIntent.js"></script>
+<script src="js/superfish.js"></script>
+<script>
+
+		// initialise plugins
+		jQuery(function(){
+			jQuery('#example').superfish({
+				//useClick: true
+			});
+		});
+
+		</script>
+</head>
+<body>
+
+
+<div class="wrap1">
+<div class="container">
+  <div class="header">
+    <div class="logo">
+      <h1>Control de Glucosa</h1>
+      <h2>Sobre Nosotros</h2>
+    </div>
+    <div class="menu">
+      <ul class="sf-menu" id="example">
+        <li><a href="index.html">Home</a></li>
+        <li class="current"> <a href="guide.html">¿Cómo funciona?</a></li>
+        <li> <a href="aboutUs.html">Sobre Nosotros </a></li>
+        <li> <a href="logIn.html">Log In </a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="clearing"></div>
+</div>
+<div class="clearing"></div>
+</div>
+<!---header-wrap--->
+<div class="wrap2">
+<div class="container">
+ 	Somos un grupo de desarrollo de la asignatura de ISST. Nuestro objetivo es ofrecen un portal web donde pacientes de diabetes puedan gestionar su control de glucosa de forma cómoda y sencilla.
+	<br/>
+	Por otro lado queremos poder ofrecer la posibilidad de que los médicos de los correspondientes pacientes puedan acceder a los datos de sus pacientes.
+	<br/>
+
+<div class="clearing"></div>
+</div>
+</div>
+<!---wrap4--->
+<div class="wrap3">
+	<div class="container">
+	  <div class="footer"> Grupo 15 ISST - Sistema de Control de Glucosa 
+	  <div id= "fecha">
+			<script type="text/javascript">
+				var fecha = new Date();
+				var date = fecha.toLocaleDateString("en-US");
+				var hora = " " + fecha.getHours() + ":" + fecha.getMinutes() 
+				document.getElementById("fecha").innerHTML = date + hora;
+			</script>
+		</div>
+		</div>
+	<div class="clearing"></div>
+</div>
+</div>
+<div class="shadows2">
+</div>
+</body>
+</html>
