@@ -6,7 +6,7 @@ import es.isst.g15.model.Usuario;
 
 public interface ControlGlucosaDao {
 	
-	public void nuevaMedida(Medicion medicion);
+	public void nuevaMedida(Medicion medicion, String correo);
 	
 	public void sacarResultados();
 	

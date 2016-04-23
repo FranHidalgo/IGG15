@@ -21,6 +21,7 @@
 		});
 
 		</script>
+		
 </head>
 <body>
 
@@ -70,7 +71,7 @@
 					</tr>
 					<tr>
 						<td>Correo: </td>
-						<td>a@a.com</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>DNI: </td>
@@ -94,7 +95,13 @@
 					</tr>
 					<tr>
 						<td>Teléfono de contacto: </td>
-						<td>666666666</td>
+						<td>
+							<script type="text/javascript">
+								var usuario = req.getParameter("user");
+								document.innerHTML = usuario;
+								
+							</script>
+						</td>
 					</tr>
 	</table>
 		

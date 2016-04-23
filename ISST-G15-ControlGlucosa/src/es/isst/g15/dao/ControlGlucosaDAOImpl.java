@@ -24,7 +24,7 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 	}
 	
 	@Override
-	public void nuevaMedida(Medicion medicion){
+	public void nuevaMedida(Medicion medicion, String correo){
 		
 		EntityManager em = EMFService.get().createEntityManager();
 		
