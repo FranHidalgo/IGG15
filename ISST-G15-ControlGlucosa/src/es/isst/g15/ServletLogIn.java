@@ -1,6 +1,8 @@
 package es.isst.g15;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.isst.g15.dao.ControlGlucosaDAOImpl;
 import es.isst.g15.dao.ControlGlucosaDao;
+import es.isst.g15.model.Medico;
 import es.isst.g15.model.Usuario;
 
 public class ServletLogIn extends HttpServlet {
@@ -32,29 +35,45 @@ public class ServletLogIn extends HttpServlet {
 		
 		req.getSession().setAttribute("correo", correo);
 		req.getSession().setAttribute("password", password);
-		resp.setContentType("text/plain");
-		/*resp.getWriter().println("Hello, world");
-		resp.getWriter().println("Usuario "+ correo);
-		resp.getWriter().println("Contraseña " + password);*/
+		//resp.setContentType("text/plain");
 		
 		if(logInCorrecto){
 			//resp.getWriter().println("Usuario correcto");
 			//req.getSession().setAttribute("user", correo);
 			Usuario usuario = dao.getUsuario(correo, password);
-			req.getSession().setAttribute("usuario", correo);
-			req.getSession().setAttribute("nombre", usuario.getNombre());
-			req.getSession().setAttribute("apellidos", usuario.getApellidos());
-			req.getSession().setAttribute("dni", usuario.getDni());
-			req.getSession().setAttribute("nacimiento", usuario.getFechaNacimiento());
-			req.getSession().setAttribute("gsanguineo", usuario.getGrupoSanguineo());
-			req.getSession().setAttribute("tipoDiabetes", usuario.getTipoDiabetes());
-			req.getSession().setAttribute("peso", usuario.getPeso());
-			req.getSession().setAttribute("telefono", usuario.getTelefono());
-			resp.sendRedirect("paciente.html");
+			if (usuario != null){
+				req.getSession().setAttribute("usuario", correo);
+				req.getSession().setAttribute("nombre", usuario.getNombre());
+				req.getSession().setAttribute("apellidos", usuario.getApellidos());
+				req.getSession().setAttribute("dni", usuario.getDni());
+				req.getSession().setAttribute("nacimiento", usuario.getFechaNacimiento());
+				req.getSession().setAttribute("gsanguineo", usuario.getGrupoSanguineo());
+				req.getSession().setAttribute("tipoDiabetes", usuario.getTipoDiabetes());
+				req.getSession().setAttribute("peso", usuario.getPeso());
+				req.getSession().setAttribute("telefono", usuario.getTelefono());
+				List<Medico> medicos = dao.getAllMedico();
+				
+				req.getSession().setAttribute("medicos", new ArrayList<Medico>(medicos));
+				resp.sendRedirect("paciente.html");
+				/*resp.setContentType("text/plain");
+				resp.getWriter().println(req.getSession().getAttribute("medicos"));*/
+			}else{
+				
+				Medico medico = dao.getMedico(correo, password);
+				if (medico != null){
+					req.getSession().setAttribute("medico", correo);
+					req.getSession().setAttribute("nombre", medico.getNombre());
+					req.getSession().setAttribute("apellidos", medico.getApellidos());
+					resp.getWriter().println("Se ha registrado un nuevo medico correctamente");
+					resp.sendRedirect("medicoProfile.jsp");
+				}
+				
+			}
 		}
 		else{
-			//resp.getWriter().println("El usuario no existe");
-			resp.sendRedirect("/logIn.jsp");
+			resp.setContentType("text/plain");
+			resp.getWriter().println("Error");
+			//resp.sendRedirect("/logIn.jsp");
 		}
 		
 	

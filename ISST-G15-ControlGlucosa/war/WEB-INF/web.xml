@@ -13,8 +13,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	    <servlet-class>es.isst.g15.ServletRegistroPaciente</servlet-class>
 	</servlet>
 	<servlet>
+	    <servlet-name>ServletRegistroMedico</servlet-name>
+	    <servlet-class>es.isst.g15.ServletRegistroMedico</servlet-class>
+	</servlet>
+	<servlet>
 	    <servlet-name>ServletLogIn</servlet-name>
 	    <servlet-class>es.isst.g15.ServletLogIn</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>ServletSeleccionaMedico</servlet-name>
+	    <servlet-class>es.isst.g15.ServletSeleccionaMedico</servlet-class>
 	</servlet>
 	<servlet>
 	    <servlet-name>ServletLogOut</servlet-name>
@@ -29,12 +37,20 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/ServletRegistroPaciente</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
+		<servlet-name>ServletRegistroMedico</servlet-name>
+		<url-pattern>/ServletRegistroMedico</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>ServletLogIn</servlet-name>
 		<url-pattern>/logIn</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ServletLogOut</servlet-name>
 		<url-pattern>/logOut</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletSeleccionaMedico</servlet-name>
+		<url-pattern>/seleccionaMedico</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

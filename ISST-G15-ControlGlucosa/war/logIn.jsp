@@ -62,6 +62,7 @@
 
 	</form>
 	<div class="qregister"><a href="register.html">¿Aún no estás registrado? Pulsa aquí.<a></div>
+	<div class="qregister"><a href="registroMedico.html">Si eres médico pulsa aquí para registrarte.<a></div>
 		
 <div class="clearing"></div>
 </div>

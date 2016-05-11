@@ -70,7 +70,7 @@
         <li><a href="userData.html">Consulta de datos</a></li>
         <li class="current"> <a href="enterData.html">Formulario</a></li>
         <li> <a href="userProfile.html">Perfil</a></li>
-        <li> <a href="index.html">Log Out</a></li>
+        <li> <a href="logOut">Log Out</a></li>
       </ul>
     </div>
   </div>

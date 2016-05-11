@@ -1,4 +1,4 @@
-package es.isst.g15.model;
+	package es.isst.g15.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,53 +12,53 @@ public class Medicion implements Serializable{
 	private static final long serialVersionUID = 01L;
 	
 	@Id
-	private Date fechaMedicion;
+	private String fechaMedicion;
 	
-	private double nivelGlucosa;
+	private String nivelGlucosa;
 	
 	private boolean antesDeComida;
 	private String usuario;
 
-	public Medicion(Date fechaMedicion, double nivelGlucosa,
-			boolean antesDeComida, String usuario) {
+	public Medicion(String fechaMedicion, String nivelGlucosa/*,
+			boolean antesDeComida, String usuario*/) {
 		super();
 		this.fechaMedicion = fechaMedicion;
 		this.nivelGlucosa = nivelGlucosa;
-		this.antesDeComida = antesDeComida;
-		this.usuario = usuario;
+		/*this.antesDeComida = antesDeComida;
+		this.usuario = usuario;*/
 	}
 
-	public String getUsuario() {
+	/*public String getUsuario() {
 		return usuario;
 	}
 
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
-	}
+	}*/
 
-	public Date getFechaMedicion() {
+	public String getFechaMedicion() {
 		return fechaMedicion;
 	}
 
-	public void setFechaMedicion(Date fechaMedicion) {
+	public void setFechaMedicion(String fechaMedicion) {
 		this.fechaMedicion = fechaMedicion;
 	}
 
-	public double getNivelGlucosa() {
+	public String getNivelGlucosa() {
 		return nivelGlucosa;
 	}
 
-	public void setNivelGlucosa(double nivelGlucosa) {
+	public void setNivelGlucosa(String nivelGlucosa) {
 		this.nivelGlucosa = nivelGlucosa;
 	}
 
-	public boolean isAntesDeComida() {
+	/*public boolean isAntesDeComida() {
 		return antesDeComida;
 	}
 
 	public void setAntesDeComida(boolean antesDeComida) {
 		this.antesDeComida = antesDeComida;
-	}
+	}*/
 	
 	
 

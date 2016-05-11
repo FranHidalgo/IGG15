@@ -43,8 +43,8 @@
 					<ul class="sf-menu" id="example">
 						<li><a href="userData.html">Consulta de datos</a></li>
 						<li class="current"><a href="enterData.html">Formulario</a></li>
-						<li><a href="userProfile.html">Perfil</a></li>
-						<li><a href="index.html">Log Out</a></li>
+						<li><a href="userProfile.jsp">Perfil</a></li>
+						<li><a href="logOut">Log Out</a></li>
 					</ul>
 				</div>
 			</div>
@@ -104,6 +104,15 @@
 					<td><c:out value="${telefono}" /></td>
 				</tr>
 			</table>
+			<form action="seleccionaMedico" action ="SeleccionaMedico" method = "post">
+				<select name="medico" id = "medico">
+					<c:forEach items="${medicos}" var="doctor">
+						<option><c:out value="${doctor.correo}"/></option>
+					</c:forEach>
+				</select>
+				<button  type="submit">Seleccionar médico</button>
+			
+			</form>
 
 			<div class="clearing"></div>
 		</div>

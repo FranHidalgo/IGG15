@@ -1,12 +1,16 @@
 package es.isst.g15.dao;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import es.isst.g15.model.Medicion;
+import es.isst.g15.model.Medico;
 import es.isst.g15.model.Usuario;
+
+
 
 
 
@@ -59,11 +63,13 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 		Query q = em.createQuery("select t from Usuario t where t.correo=:email");
 		q.setParameter("email", email);
 		Usuario usuario = null;
-		//List<Usuario> usuarios = q.getResultList();
-		usuario = (Usuario)q.getResultList().get(0);
+		List<Usuario> usuarios = q.getResultList();
+		if(usuarios.size()!= 0){
+			usuario = (Usuario)q.getResultList().get(0);
+		}
 		
 		em.close(); 
-		if(usuario.getContraseña().equals(password)){
+		if(usuario != null && usuario.getContraseña().equals(password)){
 			return usuario;
 		}
 		
@@ -78,8 +84,28 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 		Query q = em.createQuery("select t from Usuario t where t.correo=:email");
 		q.setParameter("email", email);
 		Usuario usuario = null;
-		//List<Usuario> usuarios = q.getResultList();
-		if(q.getResultList().isEmpty()){
+		
+		if(q.getResultList().isEmpty()){		
+			
+			Query t = em.createQuery("select t from Medico t where t.correo=:email");
+			t.setParameter("email", email);
+			//System.out.println("Comprobando medico");
+			Medico medico = null;
+			
+			if(t.getResultList().isEmpty()){
+				//System.out.println("No hay medico");
+				em.close();
+				return false;
+				
+			}
+			//System.out.println("Si hay medico");
+			medico = (Medico)t.getResultList().get(0);
+			
+			 
+			if(medico.getPassword().equals(password)){
+				em.close();
+				return true;
+			}			
 			em.close();
 			return false;
 			
@@ -94,4 +120,72 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 		return false;
 	}
 
+	@Override
+	public void nuevoMedico(String correo, String nombre, String apellidos,
+			List<String> pacientes, String password) {
+		
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Medico nuevoMedico = new Medico(correo,nombre, apellidos, pacientes, password);	
+		
+		em.persist(nuevoMedico);
+		em.close();
+		
+	}
+	
+	@Override
+	public Medico getMedico(String email, String password){
+		
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from Medico t where t.correo=:email");
+		q.setParameter("email", email);
+		Medico medico = null;
+		//List<Usuario> usuarios = q.getResultList();
+		medico = (Medico)q.getResultList().get(0);
+		
+		em.close(); 
+		if(medico.getPassword().equals(password)){
+			return medico;
+		}
+		
+		
+		else return null;
+	}
+	
+	@Override
+	public List<Medico> getAllMedico(){
+		EntityManager em = EMFService.get().createEntityManager();
+
+		List<Medico> resultado = em.createQuery("select m from Medico m").getResultList();
+		
+		em.close();
+		return resultado;
+	}
+	
+	@Override
+	public Medico getMedico(String email){
+		
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from Medico t where t.correo=:email");
+		q.setParameter("email", email);
+		Medico medico = null;
+		
+		medico = (Medico)q.getResultList().get(0);
+		
+		em.close(); 
+		
+			return medico;
+	
+	}
+	
+	@Override
+	public void changeMedico(Medico medico) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Medico resultado = em.merge(medico);
+		em.close();
+		
+
+	}
 }
