@@ -42,7 +42,7 @@
         <li><a href="index.html">Home</a></li>
         <li class="current"> <a href="guide.html">¿Cómo funciona?</a></li>
         <li> <a href="aboutUs.html">Sobre Nosotros </a></li>
-        <li> <a href="logIn.html">Log In </a></li>
+        <li> <a href="logIn.jsp">Log In </a></li>
       </ul>
     </div>
   </div>

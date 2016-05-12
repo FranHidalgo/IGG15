@@ -2,14 +2,13 @@ package es.isst.g15.dao;
 
 import java.util.List;
 
-import es.isst.g15.model.Medicion;
 import es.isst.g15.model.Medico;
 import es.isst.g15.model.Usuario;
 
 
 public interface ControlGlucosaDao {
 	
-	public void nuevaMedida(Medicion medicion, String correo);
+	public void nuevaMedida(List<String> medicion, String fecha, Usuario user);
 	
 	public void sacarResultados();
 	

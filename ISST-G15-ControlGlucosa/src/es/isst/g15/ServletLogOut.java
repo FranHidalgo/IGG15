@@ -13,15 +13,11 @@ public class ServletLogOut extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		req.getSession().invalidate();;
-		/*resp.setContentType("text/plain");
-		resp.getWriter().println(req.getParameter("nombre"));*/
 		resp.sendRedirect("/index.html");
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
-		req.getSession().invalidate();
-		//resp.sendRedirect("/index.html");
 	}
 
 }

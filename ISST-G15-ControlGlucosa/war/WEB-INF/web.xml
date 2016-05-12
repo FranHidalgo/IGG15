@@ -28,6 +28,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	    <servlet-name>ServletLogOut</servlet-name>
 	    <servlet-class>es.isst.g15.ServletLogOut</servlet-class>
 	</servlet>
+	<servlet>
+	    <servlet-name>ServletMedidaNueva</servlet-name>
+	    <servlet-class>es.isst.g15.ServletMedidaNueva</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ISST_G15_ControlGlucosa</servlet-name>
 		<url-pattern>/isst_g15_controlglucosa</url-pattern>
@@ -51,6 +55,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>ServletSeleccionaMedico</servlet-name>
 		<url-pattern>/seleccionaMedico</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletMedidaNueva</servlet-name>
+		<url-pattern>/MedidaNueva</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

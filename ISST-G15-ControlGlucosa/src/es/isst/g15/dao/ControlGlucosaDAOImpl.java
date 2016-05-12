@@ -1,17 +1,13 @@
 package es.isst.g15.dao;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import es.isst.g15.model.Medicion;
 import es.isst.g15.model.Medico;
 import es.isst.g15.model.Usuario;
-
-
-
 
 
 public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
@@ -28,11 +24,13 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 	}
 	
 	@Override
-	public void nuevaMedida(Medicion medicion, String correo){
+	public void nuevaMedida(List<String> medidas, String fecha, Usuario user){
 		
 		EntityManager em = EMFService.get().createEntityManager();
-		
-		em.persist(medicion);
+        user.setMedidas(medidas);
+        
+        em.merge(user);
+        em.close();
 		
 	}
 	
@@ -47,8 +45,8 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 			String peso, String telefono, String password){
 		
 		EntityManager em = EMFService.get().createEntityManager();
-		
-		Usuario nuevoUsuario = new Usuario(nombre, apellidos, dni, correo,fechaNacimiento, grupoSanguineo, tipoDiabetes, peso, telefono, password);	
+		List<String> medidas = new ArrayList<String>();
+		Usuario nuevoUsuario = new Usuario(nombre, apellidos, dni, correo,fechaNacimiento, grupoSanguineo, tipoDiabetes, peso, telefono, password, medidas);	
 		
 		em.persist(nuevoUsuario);
 		em.close();

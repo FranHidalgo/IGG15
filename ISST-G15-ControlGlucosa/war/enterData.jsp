@@ -67,9 +67,9 @@
     </div>
     <div class="menu">
       <ul class="sf-menu" id="example">
-        <li><a href="userData.html">Consulta de datos</a></li>
-        <li class="current"> <a href="enterData.html">Formulario</a></li>
-        <li> <a href="userProfile.html">Perfil</a></li>
+        <li><a href="userData.jsp">Consulta de datos</a></li>
+        <li class="current"> <a href="enterData.jsp">Formulario</a></li>
+        <li> <a href="userProfile.jsp">Perfil</a></li>
         <li> <a href="logOut">Log Out</a></li>
       </ul>
     </div>
@@ -81,26 +81,23 @@
 <!--header-wrap-->
 <div class="wrap2">
 <div class="container">
+<form name = "dataenter" action ="MedidaNueva" method = "POST" onSubmit="comprobar()">
 Introduzca el nivel de glucosa
-    <input type"text" id="valor" onclick="vaciar()">
+
+    <input type="text" id="valor" name="valor">
     </br>
     </br>
     Seleccione fecha de la medición
-  <input type="text" id="fechaMedicion" name="date" value="">
+  <input type="text" id="fechaMedicion" name="fechaMedicion" value="">
   <script type="text/javascript">
     $(function(){
-      $('*[name=date]').appendDtpicker();
+      $('*[name=fechaMedicion]').appendDtpicker();
     });
   </script>
     </br>
     </br>
-    <form action="">
-      <input type="checkbox" name="antes" value="antes">Antes de comer<br>
-          </br>
-      <input type="checkbox" name="despues" value="despues"> Después de comer 
-    </form>
-        </br>
-    <button onclick="comprobar()"> Guardar-</button>
+    <button type="submit"> Guardar </button>
+</form>
 
     <div id= "saved"></div>
     </br>

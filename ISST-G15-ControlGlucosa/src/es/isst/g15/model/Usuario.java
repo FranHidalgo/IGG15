@@ -1,7 +1,7 @@
 package es.isst.g15.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,11 +24,12 @@ public class Usuario implements Serializable{
 	private String peso;
 	private String telefono;
 	private String contraseña;
+	private List<String> medidas;
 	
 	
 	public Usuario(String nombre, String apellidos, String dni, String correo,
 			String fechaNacimiento, String grupoSanguineo, String tipoDiabetes,
-			String peso, String telefono, String contraseña) {
+			String peso, String telefono, String contraseña, List<String> medidas) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -40,6 +41,7 @@ public class Usuario implements Serializable{
 		this.peso = peso;
 		this.telefono = telefono;
 		this.contraseña = contraseña;
+		this.medidas = medidas;
 	}
 
 
@@ -141,6 +143,16 @@ public class Usuario implements Serializable{
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
+	
+	public List<String> getMedidas() {
+		return medidas;
+	}
+
+
+	public void setMedidas(List<String> medidas) {
+		this.medidas = medidas;
+	}
+	
 	
 
 }

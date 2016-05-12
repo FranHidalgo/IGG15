@@ -35,11 +35,8 @@ public class ServletLogIn extends HttpServlet {
 		
 		req.getSession().setAttribute("correo", correo);
 		req.getSession().setAttribute("password", password);
-		//resp.setContentType("text/plain");
 		
 		if(logInCorrecto){
-			//resp.getWriter().println("Usuario correcto");
-			//req.getSession().setAttribute("user", correo);
 			Usuario usuario = dao.getUsuario(correo, password);
 			if (usuario != null){
 				req.getSession().setAttribute("usuario", correo);
@@ -55,8 +52,7 @@ public class ServletLogIn extends HttpServlet {
 				
 				req.getSession().setAttribute("medicos", new ArrayList<Medico>(medicos));
 				resp.sendRedirect("paciente.html");
-				/*resp.setContentType("text/plain");
-				resp.getWriter().println(req.getSession().getAttribute("medicos"));*/
+			
 			}else{
 				
 				Medico medico = dao.getMedico(correo, password);
@@ -73,13 +69,6 @@ public class ServletLogIn extends HttpServlet {
 		else{
 			resp.setContentType("text/plain");
 			resp.getWriter().println("Error");
-			//resp.sendRedirect("/logIn.jsp");
 		}
-		
-	
-		
-		
-		
 	}
-
 }

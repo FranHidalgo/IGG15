@@ -16,15 +16,11 @@ public class ServletRegistroPaciente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException {
-		
+			throws IOException {		
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException, NullPointerException {
-		
-		/*resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, world");*/
 		
 		String nombre = req.getParameter("nombre");
 		String apellidos = req.getParameter("apellidos");

@@ -9,9 +9,6 @@ public class ISST_G15_ControlGlucosaServlet extends HttpServlet {
 			throws IOException {
 		resp.setContentType("text/plain");
 		resp.getWriter().println("Hello, world");
-		
-		
-		
 	}
 	
 }
