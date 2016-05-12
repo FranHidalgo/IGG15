@@ -41,7 +41,7 @@
 				</div>
 				<div class="menu">
 					<ul class="sf-menu" id="example">
-						<li><a href="userData.html">Consulta de datos</a></li>
+						<li><a href="userData.jsp">Consulta de datos</a></li>
 						<li class="current"><a href="enterData.html">Formulario</a></li>
 						<li><a href="userProfile.jsp">Perfil</a></li>
 						<li><a href="logOut">Log Out</a></li>
