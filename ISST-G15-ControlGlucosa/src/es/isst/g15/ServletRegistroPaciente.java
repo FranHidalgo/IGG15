@@ -1,6 +1,9 @@
 package es.isst.g15;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import es.isst.g15.dao.ControlGlucosaDAOImpl;
 import es.isst.g15.dao.ControlGlucosaDao;
 import es.isst.g15.model.Usuario;
+
+import com.google.appengine.api.blobstore.BlobKey;
+import com.google.appengine.api.blobstore.BlobstoreService;
+import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 
 
 public class ServletRegistroPaciente extends HttpServlet {
@@ -36,7 +43,7 @@ public class ServletRegistroPaciente extends HttpServlet {
 		
 		ControlGlucosaDao dao = ControlGlucosaDAOImpl.getInstance();
 		
-		dao.nuevoUsuario(nombre, apellidos, dni, correo, nacimiento, gsanguineo, tipoDiabetes, peso, telefono, password);
+		dao.nuevoUsuario(nombre, apellidos, dni, correo, nacimiento, gsanguineo, tipoDiabetes, peso, telefono, password);       
 		
 		resp.sendRedirect("logIn.jsp");
 		/*Usuario nuevoUsuario = new Usuario(nombre, apellidos, dni, correo, nacimiento, gsanguineo, tipoDiabetes, peso, telefono, password);

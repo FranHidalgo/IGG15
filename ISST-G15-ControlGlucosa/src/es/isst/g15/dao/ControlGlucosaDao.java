@@ -16,6 +16,8 @@ public interface ControlGlucosaDao {
 			String fechaNacimiento, String grupoSanguineo, String tipoDiabetes,
 			String peso, String telefono, String password);
 	
+	public void uploadCsv(String correo, String password, String csv);
+	
 	public Usuario getUsuario(String email, String password);
 	
 	public boolean correctLogIn(String email, String password);

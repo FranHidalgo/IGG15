@@ -1,5 +1,6 @@
 package es.isst.g15.dao;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,9 +49,22 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 		List<String> medidas = new ArrayList<String>();
 		Usuario nuevoUsuario = new Usuario(nombre, apellidos, dni, correo,fechaNacimiento, grupoSanguineo, tipoDiabetes, peso, telefono, password, medidas);	
 		
+		//File csv = new File(nuevoUsuario.csv);
+		
 		em.persist(nuevoUsuario);
 		em.close();
 		
+	}
+	
+	@Override
+	public void uploadCsv(String correo, String password, String csv){
+		
+		EntityManager em = EMFService.get().createEntityManager();
+		Usuario user = getUsuario(correo, password);
+		user.setCsv(csv);
+		
+		em.merge(user);
+		em.close();
 	}
 	
 	@Override

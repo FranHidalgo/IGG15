@@ -1,5 +1,6 @@
 package es.isst.g15.model;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class Usuario implements Serializable{
 	private String telefono;
 	private String contraseña;
 	private List<String> medidas;
+	public String csv;
 	
 	
 	public Usuario(String nombre, String apellidos, String dni, String correo,
@@ -42,6 +44,8 @@ public class Usuario implements Serializable{
 		this.telefono = telefono;
 		this.contraseña = contraseña;
 		this.medidas = medidas;
+		this.csv = null;
+		
 	}
 
 
@@ -151,6 +155,16 @@ public class Usuario implements Serializable{
 
 	public void setMedidas(List<String> medidas) {
 		this.medidas = medidas;
+	}
+
+
+	public String getCsv() {
+		return csv;
+	}
+
+
+	public void setCsv(String csv) {
+		this.csv = csv;
 	}
 	
 	

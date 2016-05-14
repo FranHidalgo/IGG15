@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="com.google.appengine.api.blobstore.BlobstoreServiceFactory" %>
+<%@ page import="com.google.appengine.api.blobstore.BlobstoreService" %>
+<%
+    BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -98,6 +103,13 @@ Introduzca el nivel de glucosa
     </br>
     <button type="submit"> Guardar </button>
 </form>
+	</br>
+<form action="<%=blobstoreService.createUploadUrl("/upload")%>"
+		method="post" enctype="multipart/form-data">
+		<input type="file" name="file" />
+		<input type="submit" value="Subir CSV" />
+	</form>
+
 
     <div id= "saved"></div>
     </br>
