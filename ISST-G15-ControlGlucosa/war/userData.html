@@ -6,11 +6,17 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link type="text/css" href="css/jquery.simple-dtpicker.css" rel="stylesheet" />
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+
 <!--menu-->
 <link rel="stylesheet" href="css/superfish.css" media="screen">
 <script src="js/jquery-1.9.0.min.js"></script>
 <script src="js/hoverIntent.js"></script>
 <script src="js/superfish.js"></script>
+<script src="js/jquery.mtz.monthpicker.js"></script>
+<script type="text/javascript" src="js/jquery.simple-dtpicker.js"></script>
+
 <script>
 
 		// initialise plugins
@@ -70,7 +76,45 @@
 </style>
 
 <p>Estas son sus medidas de Glucosa</p>
-<p>Elegir Fecha aqui --> xxxxxxxxxx</p>
+<p>Elegir entre día concreto o mes.</p>
+    </br>
+<select id = "diaomes" onChange="mostrar(this.value);">
+	<option value="mes">Mes</option>
+	<option value="dia">Día</option>
+	  </select>
+
+<script>
+function mostrar(val) {
+if (val=="dia"){
+     $("#dia").show();
+    $("#mes").hide();}
+	else{
+	$("#dia").hide();
+    $("#mes").show();}
+	}
+</script>
+    </br>
+    </br>
+
+<p> Seleccione fecha de la medición</p>
+  
+  <div id="mes">
+ <input type="text" id="fechaMedicionmes" name="datemes" value="" onchange="obtenerFecha()">
+<script type="text/javascript">
+	$(function(){
+	$('*[name=datemes]').monthpicker();
+    });
+	</script></div>
+  
+  <div id="dia" style="display:none">
+   <input type="text" id="fechaMediciondia" name="datedia" value="" onchange="obtenerFecha()">
+<script type="text/javascript">
+	$(function(){
+	$('*[name=datedia]').appendDtpicker();
+    });
+	</script></div>
+    </br>
+    </br>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
@@ -78,7 +122,7 @@
 <div id="graficaDatos"></div>
 
 
-//tablaDatos
+//tablaDatos 
 <script type="text/javascript">    
 	//Imprimir por pantalla la tabla con el CSV
 	d3.text("datosGlucosaCSV.csv", function(datasetText) {
@@ -103,6 +147,21 @@
 
     </script>
 
+	<script type="text/javascript">
+	function obtenerFecha(){
+	var compruebames = document.getElementById("diaomes").value;
+	if (compruebames == "mes"&&document.getElementById("fechaMedicionmes").value!=""){
+			var fecha = $('#fechaMedicionmes').monthpicker('getDate');
+			//mostrarTablaMensual(fecha);
+			//alert("Mostrando Tabla de fecha "+fecha+ " En la opción " + compruebames);
+        }
+		  else if (compruebames == "dia"){
+			var fecha = $('#fechaMediciondia').handleDtpicker('getDate');
+			//mostrarTablaDiaria(fecha);
+			//alert("Mostrando Tabla de fecha "+fecha+ " En la opción " + compruebames);
+			}
+	}
+	</script>
 
 		
 <div class="clearing"></div>
