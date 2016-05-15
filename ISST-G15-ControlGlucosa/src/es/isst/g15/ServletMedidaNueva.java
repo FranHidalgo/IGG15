@@ -37,7 +37,7 @@ public class ServletMedidaNueva extends HttpServlet{
 		
 		medidas.add(medida);
 		
-		dao.nuevaMedida(medidas, fecha, user);
+		dao.nuevaMedida(medidas, user);
 		
 		resp.sendRedirect("enterData.jsp");
 	}
