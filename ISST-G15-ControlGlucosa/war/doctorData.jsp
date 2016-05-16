@@ -1,30 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>TMPS00015</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
-<link href='http://fonts.googleapis.com/css?family=Economica'
-	rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lato'
-		rel='stylesheet' type='text/css'>
-		<!--menu-->
-		<link rel="stylesheet" href="css/superfish.css" media="screen">
-			<script src="js/jquery-1.9.0.min.js"></script>
-			<script src="js/hoverIntent.js"></script>
-			<script src="js/superfish.js"></script>
-			<script>
-				// initialise plugins
-				jQuery(function() {
-					jQuery('#example').superfish({
-					//useClick: true
-					});
-				});
-			</script>
+<link type="text/css" href="css/jquery.simple-dtpicker.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<!--menu-->
+<link rel="stylesheet" href="css/superfish.css" media="screen">
+<script src="js/jquery-1.9.0.min.js"></script>
+<script src="js/hoverIntent.js"></script>
+<script src="js/superfish.js"></script>
+<script type="text/javascript" src="js/jquery.simple-dtpicker.js"></script>
+<script>
+
+		// initialise plugins
+		jQuery(function(){
+			jQuery('#example').superfish({
+				//useClick: true
+			});
+		});
+
+</script>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
 </head>
 <body>
 
@@ -63,6 +68,18 @@
 						<option><c:out value="${paciente}" /></option>
 					</c:forEach>
 				</select>
+				<br>
+				<br>
+				<input type="text" id="fecha" name="fecha" >
+				  <script type="text/javascript">
+				    $(function(){
+				      $('*[name=fecha]').appendDtpicker({
+				    	  "dateOnly": true
+				      });
+				    });
+				  </script>
+				  <br>
+				  <br>
 				<button type="submit">Seleccionar paciente</button>
 
 			</form>

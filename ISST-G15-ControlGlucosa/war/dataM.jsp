@@ -55,27 +55,30 @@
 	<div class="wrap2">
 		<div class="container">
 		
-        <c:forEach items="${medidas}" var="medida">
-    		${medida}<br>
-		</c:forEach>
+		<h1>Paciente: <c:out value="${paciente}" /></h1>
+        <h1>Fecha: <c:out value="${date}" /></h1>
 		<br>
 		<br>
-		<c:forEach items="${datos}" var="dato">
+		<table>
+		<tr>
+		  	<td><strong>Hora</strong></td>
+		 	<td><strong>Nivel de glucosa</strong></td>
+		</tr>
+		<tr>
+			<td><c:forEach items="${horas}" var="hora">
+    		${hora}<br>
+				</c:forEach>
+			</td>
+			<td>
+			<c:forEach items="${datos}" var="dato">
     		${dato}<br>
-		</c:forEach>
-		<br>
-		<br>
-		<c:forEach items="${fechas}" var="fecha">
-    		${fecha}<br>
-		</c:forEach>
-		<br>
-		<br>
-		<c:forEach items="${dates}" var="date">
-    		${date}<br>
-		</c:forEach>
-		</div>
-	</div>
+			</c:forEach>
+			</td>
+		</tr>
+		</table>
 	
+	</div>
+	</div>
 	
 	
 	

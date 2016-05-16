@@ -17,8 +17,8 @@ import es.isst.g15.dao.ControlGlucosaDAOImpl;
 import es.isst.g15.dao.ControlGlucosaDao;
 import es.isst.g15.model.Usuario;
 
-public class ServletMostrarDatos extends HttpServlet{
-	private static final long serialVersionUID = 1L;
+public class ServletMostrarPaciente extends HttpServlet{
+private static final long serialVersionUID = 1L;
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {

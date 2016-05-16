@@ -72,7 +72,7 @@
     </div>
     <div class="menu">
       <ul class="sf-menu" id="example">
-        <li><a href="/mostrar">Consulta de datos</a></li>
+        <li><a href="userData.jsp">Consulta de datos</a></li>
         <li class="current"> <a href="enterData.jsp">Formulario</a></li>
         <li> <a href="userProfile.jsp">Perfil</a></li>
         <li> <a href="logOut">Log Out</a></li>
@@ -90,8 +90,8 @@
 Introduzca el nivel de glucosa
 
     <input type="text" id="valor" name="valor">
-    </br>
-    </br>
+    <br>
+    <br>
     Seleccione fecha de la medición
   <input type="text" id="fechaMedicion" name="fechaMedicion" value="">
   <script type="text/javascript">
@@ -99,34 +99,24 @@ Introduzca el nivel de glucosa
       $('*[name=fechaMedicion]').appendDtpicker();
     });
   </script>
-    </br>
-    </br>
+    <br>
+    <br>
     <button type="submit"> Guardar </button>
 </form>
-	</br>
+	<br>
 <form action="<%=blobstoreService.createUploadUrl("/upload")%>"
 		method="post" enctype="multipart/form-data">
 		<input type="file" name="file" />
 		<input type="submit" value="Subir CSV" />
 	</form>
 
+</div>
+</div>
 
-    <div id= "saved"></div>
-    </br>
-    <div id= "fecha"></div>
 
-    <script type="text/javascript">
-      var fecha = new Date();
-      var date = fecha.toLocaleDateString("en-US");
-      var hora = " " + fecha.getHours() + ":" + fecha.getMinutes() 
-      document.getElementById("fecha").innerHTML = date + hora;
-    </script>
-  </body>
-
-  </div>
+  
 <div class="clearing"></div>
-</div>
-</div>
+
 <!--wrap4-->
 <div class="wrap3">
 <div class="container">
@@ -145,6 +135,7 @@ Introduzca el nivel de glucosa
 </div>
 </div>
 <div class="shadows2">
+</div>
 </div>
 </body>
 </html>

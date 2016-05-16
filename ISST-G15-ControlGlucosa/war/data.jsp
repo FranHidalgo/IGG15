@@ -41,7 +41,7 @@
 				</div>
 				<div class="menu">
 					<ul class="sf-menu" id="example">
-						<li><a href="/mostrar">Consulta de datos</a></li>
+						<li><a href="userData.jsp">Consulta de datos</a></li>
 						<li class="current"><a href="enterData.jsp">Formulario</a></li>
 						<li><a href="userProfile.jsp">Perfil</a></li>
 						<li><a href="logOut">Log Out</a></li>
@@ -56,25 +56,52 @@
 	<div class="wrap2">
 		<div class="container">
 		
-        <c:forEach items="${medidas}" var="medida">
-    		${medida}<br>
-		</c:forEach>
+		<h1>Fecha: <c:out value="${date}" /></h1>
 		<br>
 		<br>
-		<c:forEach items="${datos}" var="dato">
+		<table>
+		<tr>
+		  	<td><strong>Hora</strong></td>
+		 	<td><strong>Nivel de glucosa</strong></td>
+		</tr>
+		<tr>
+			<td><c:forEach items="${horas}" var="hora">
+    		${hora}<br>
+				</c:forEach>
+			</td>
+			<td>
+			<c:forEach items="${datos}" var="dato">
     		${dato}<br>
-		</c:forEach>
-		<br>
-		<br>
-		<c:forEach items="${fechas}" var="fecha">
-    		${fecha}<br>
-		</c:forEach>
-		<br>
-		<br>
-		<c:forEach items="${dates}" var="date">
-    		${date}<br>
-		</c:forEach>
+			</c:forEach>
+			</td>
+		</tr>
+		</table>
+<%--         <c:forEach items="${medidas}" var="medida"> --%>
+<%--     		${medida}<br> --%>
+<%-- 		</c:forEach> --%>
+<!-- 		<br> -->
+<!-- 		<br> -->
+<%-- 		<c:forEach items="${datos}" var="dato"> --%>
+<%--     		${dato}<br> --%>
+<%-- 		</c:forEach> --%>
+<!-- 		<br> -->
+<!-- 		<br> -->
+<%-- 		<c:forEach items="${fechas}" var="fecha"> --%>
+<%--     		${fecha}<br> --%>
+<%-- 		</c:forEach> --%>
+<!-- 		<br> -->
+<!-- 		<br> -->
+<%-- 		<c:forEach items="${dates}" var="date"> --%>
+<%--     		${date}<br> --%>
+<%-- 		</c:forEach> --%>
+<!-- 		<br> -->
+<!-- 		<br> -->
+<%-- 		<c:forEach items="${horas}" var="hora"> --%>
+<%--     		${hora}<br> --%>
+<%-- 		</c:forEach> --%>
 		</div>
+		
+		
 	</div>
 	
 	

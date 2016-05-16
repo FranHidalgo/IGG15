@@ -35,7 +35,7 @@
 			<div class="header">
 				<div class="logo">
 					<h1>
-						<a href="paciente.html">Control de Glucosa</a>
+						<a href="medico.html">Control de Glucosa</a>
 					</h1>
 					<h2>Información de usuario</h2>
 				</div>
