@@ -52,72 +52,35 @@
 		</div>
 		<div class="clearing"></div>
 	</div>
-	<!--header-wrap-->
+	
 	<div class="wrap2">
 		<div class="container">
-			<!--<ul>
-			<li>Nombre:</li>
-			<li>Apellidos:</li>
-			<li>Correo:</li>
-			<li>DNI:</li>
-			<li>Fecha de nacimiento:</li>
-			<li>Grupo sanguíneo:</li>
-			<li>Tipo de diabetes:</li>
-			<li>Peso:</li>
-			<li>Teléfono de contacto:</li>
-	</ul>-->
-			<table>
-				<tr>
-					<td>Nombre:</td>
-					<td><c:out value="${nombre}" /></td>
-				</tr>
-				<tr>
-					<td>Apellidos:</td>
-					<td><c:out value="${apellidos}" /></td>
-				</tr>
-				<tr>
-					<td>Correo:</td>
-					<td><c:out value="${usuario}" /></td>
-				</tr>
-				<tr>
-					<td>DNI:</td>
-					<td><c:out value="${dni}" /></td>
-				</tr>
-				<tr>
-					<td>Fecha de nacimiento:</td>
-					<td><c:out value="${nacimiento}" /></td>
-				</tr>
-				<tr>
-					<td>Grupo sanguíneo:</td>
-					<td><c:out value="${gsanguineo}" /></td>
-				</tr>
-				<tr>
-					<td>Tipo de diabetes:</td>
-					<td><c:out value="${tipoDiabetes}" /></td>
-				</tr>
-				<tr>
-					<td>Peso:</td>
-					<td><c:out value="${peso}" /></td>
-				</tr>
-				<tr>
-					<td>Teléfono de contacto:</td>
-					<td><c:out value="${telefono}" /></td>
-				</tr>
-			</table>
-			<form action="seleccionaMedico" action ="SeleccionaMedico" method = "post">
-				<select name="medico" id = "medico">
-					<c:forEach items="${medicos}" var="doctor">
-						<option><c:out value="${doctor.correo}"/></option>
-					</c:forEach>
-				</select>
-				<button  type="submit">Seleccionar médico</button>
-			
-			</form>
-
-			<div class="clearing"></div>
+		
+        <c:forEach items="${medidas}" var="medida">
+    		${medida}<br>
+		</c:forEach>
+		<br>
+		<br>
+		<c:forEach items="${datos}" var="dato">
+    		${dato}<br>
+		</c:forEach>
+		<br>
+		<br>
+		<c:forEach items="${fechas}" var="fecha">
+    		${fecha}<br>
+		</c:forEach>
 		</div>
 	</div>
-	<!--wrap4-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<div class="wrap3">
 		<div class="container">
 			<div class="footer">

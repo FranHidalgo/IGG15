@@ -36,6 +36,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	    <servlet-name>ServletUpdateCsv</servlet-name>
 	    <servlet-class>es.isst.g15.ServletUpdateCsv</servlet-class>
 	</servlet>
+	<servlet>
+	    <servlet-name>ServletMostrarDatos</servlet-name>
+	    <servlet-class>es.isst.g15.ServletMostrarDatos</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>ISST_G15_ControlGlucosa</servlet-name>
@@ -68,6 +72,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>ServletUpdateCsv</servlet-name>
 		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletMostrarDatos</servlet-name>
+		<url-pattern>/mostrar</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>

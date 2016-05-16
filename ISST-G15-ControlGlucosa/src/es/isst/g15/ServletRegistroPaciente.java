@@ -21,6 +21,7 @@ import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 
 public class ServletRegistroPaciente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {		
@@ -40,10 +41,21 @@ public class ServletRegistroPaciente extends HttpServlet {
 		String telefono = req.getParameter("telefono");
 		String password = req.getParameter("contraseña");
 		
-		
 		ControlGlucosaDao dao = ControlGlucosaDAOImpl.getInstance();
 		
-		dao.nuevoUsuario(nombre, apellidos, dni, correo, nacimiento, gsanguineo, tipoDiabetes, peso, telefono, password);       
+//		String fileName = correo + ".csv";
+//		File file = new File(fileName);
+//		
+//		BlobKey blobKey = blobstoreService.createGsBlobKey("/gs/"+ fileName);
+		//List<BlobKey> blobKeys = blobstoreService.
+		
+		//String blob = blobKey.getKeyString();
+		
+		dao.nuevoUsuario(nombre, apellidos, dni, correo, nacimiento, gsanguineo, tipoDiabetes, peso, telefono, password);   
+		
+		//Usuario user = dao.getUsuario(correo, password);
+		//dao.uploadCsv(correo, password, blob);
+		
 		
 		resp.sendRedirect("logIn.jsp");
 		/*Usuario nuevoUsuario = new Usuario(nombre, apellidos, dni, correo, nacimiento, gsanguineo, tipoDiabetes, peso, telefono, password);
