@@ -53,18 +53,46 @@
 		<div class="clearing"></div>
 	</div>
 	
+	<style>
+.demo {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+.demo th {
+	border: 1px solid #C0C0C0;
+	padding: 5px;
+	background: #F0F0F0;
+}
+
+.demo td {
+	border: 1px solid #C0C0C0;
+	text-align: left;
+	padding: 5px;
+}
+</style>
+	
 	<div class="wrap2">
 		<div class="container">
 		
 		<h1>Fecha: <c:out value="${date}" /></h1>
 		<br>
 		<br>
-		<table>
+		<table class="demo">
 		<tr>
+			<td><strong>Fecha</strong></td>
 		  	<td><strong>Hora</strong></td>
 		 	<td><strong>Nivel de glucosa</strong></td>
+		 	
 		</tr>
 		<tr>
+			<td><c:forEach items="${fechas}" var="fecha">
+    		${fecha}<br>
+				</c:forEach>
+			</td>
 			<td><c:forEach items="${horas}" var="hora">
     		${hora}<br>
 				</c:forEach>
@@ -74,6 +102,7 @@
     		${dato}<br>
 			</c:forEach>
 			</td>
+			
 		</tr>
 		</table>
 <%--         <c:forEach items="${medidas}" var="medida"> --%>

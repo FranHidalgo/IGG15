@@ -73,6 +73,7 @@ Elija la fecha
     <br>
     <button type="submit"> Seleccionar </button>
 </form>
+<a href="/mostrar">Mostrar todas las medidas</a>
 
 
 

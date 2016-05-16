@@ -23,6 +23,40 @@ public class ServletSeleccionaPaciente extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
 		
+		String paciente = req.getParameter("paciente");
+		String date = req.getParameter("fecha");
+		
+		ControlGlucosaDao dao = ControlGlucosaDAOImpl.getInstance();
+		Usuario user = dao.getPaciente(paciente);
+		
+		List<String> medidas = user.getMedidas();
+		List<String> datos = new ArrayList<String>();
+		List<String> fechas = new ArrayList<String>();
+		List<String> horas = new ArrayList<String>();
+		List<String> dates = new ArrayList<String>();
+		
+		for (int i = 0; i<medidas.size(); i++){
+			int coma = medidas.get(i).indexOf(",");
+			String dato = medidas.get(i).substring(0, coma);
+			String fecha = medidas.get(i).substring(coma+2, coma+12);
+			String hora = medidas.get(i).substring(coma+13);
+			
+				fechas.add(fecha);
+				datos.add(dato);
+				horas.add(hora);
+			
+		}
+		
+		req.getSession().setAttribute("paciente", paciente);
+		req.getSession().setAttribute("date", date);
+		req.getSession().setAttribute("datos", datos);
+		req.getSession().setAttribute("medidas", medidas);
+		req.getSession().setAttribute("fechas", fechas);
+		req.getSession().setAttribute("dates", dates);
+		req.getSession().setAttribute("horas", horas);	
+		
+		resp.sendRedirect("/dataM.jsp");
+		
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)

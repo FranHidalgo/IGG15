@@ -61,8 +61,8 @@
 	
 	
 		<div class="container">
-		<form action="seleccionaPaciente" action="SeleccionaPaciente"
-				method="post">
+		<form action="seleccionaPaciente" action="SeleccionaPaciente" method="post">
+		
 				<select name="paciente" id="paciente">
 					<c:forEach items="${pacientes}" var="paciente">
 						<option><c:out value="${paciente}" /></option>
@@ -83,6 +83,23 @@
 				<button type="submit">Seleccionar paciente</button>
 
 			</form>
+			<br>
+		  <br>
+		  <br>
+		  <br>
+			<form action="seleccionaPaciente" action="SeleccionaPaciente" method="get">
+		
+				<select name="paciente" id="paciente">
+					<c:forEach items="${pacientes}" var="paciente">
+						<option><c:out value="${paciente}" /></option>
+					</c:forEach>
+				</select>				
+				  <br>
+				<button type="submit">Mostrar todos las medidas del paciente</button>
+
+			</form>
+			
+			
 			
 			<div class="clearing"></div>
 		</div>
