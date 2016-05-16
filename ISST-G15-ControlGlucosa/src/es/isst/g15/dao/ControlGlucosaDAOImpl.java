@@ -197,7 +197,19 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 		EntityManager em = EMFService.get().createEntityManager();
 		Medico resultado = em.merge(medico);
 		em.close();
-		
-
 	}
+	
+	@Override
+	public Usuario getPaciente(String email) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select t from Usuario t where t.correo=:email");
+		q.setParameter("email", email);
+		Usuario user = null;
+		user = (Usuario)q.getResultList().get(0);
+		
+		em.close();
+		
+		return user;
+	}
+	
 }

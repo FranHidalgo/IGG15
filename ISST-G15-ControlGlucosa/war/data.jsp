@@ -69,6 +69,11 @@
 		<c:forEach items="${fechas}" var="fecha">
     		${fecha}<br>
 		</c:forEach>
+		<br>
+		<br>
+		<c:forEach items="${dates}" var="date">
+    		${date}<br>
+		</c:forEach>
 		</div>
 	</div>
 	

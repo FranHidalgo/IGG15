@@ -60,8 +60,9 @@ public class ServletLogIn extends HttpServlet {
 					req.getSession().setAttribute("medico", correo);
 					req.getSession().setAttribute("nombre", medico.getNombre());
 					req.getSession().setAttribute("apellidos", medico.getApellidos());
-					resp.getWriter().println("Se ha registrado un nuevo medico correctamente");
-					resp.sendRedirect("medicoProfile.jsp");
+					List<String> pacientes = medico.getPacientes();
+					req.getSession().setAttribute("pacientes", new ArrayList<String>(pacientes));
+					resp.sendRedirect("medico.html");
 				}
 				
 			}

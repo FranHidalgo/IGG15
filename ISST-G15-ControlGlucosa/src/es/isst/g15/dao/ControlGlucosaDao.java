@@ -31,5 +31,7 @@ public interface ControlGlucosaDao {
 	public Medico getMedico(String email);
 
 	public void changeMedico(Medico medico);
+	
+	public Usuario getPaciente(String email);
 
 }
