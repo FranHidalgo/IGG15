@@ -72,7 +72,7 @@
 					<td>Correo:</td>
 					<td><c:out value="${medico}" /></td>
 				</tr>
-				
+				</table>
 
 			<div class="clearing"></div>
 		</div>
