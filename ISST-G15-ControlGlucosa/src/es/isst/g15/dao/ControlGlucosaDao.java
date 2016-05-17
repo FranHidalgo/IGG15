@@ -10,7 +10,6 @@ public interface ControlGlucosaDao {
 	
 	public void nuevaMedida(List<String> medicion, Usuario user);
 	
-	public void sacarResultados();
 	
 	public void nuevoUsuario(String nombre, String apellidos, String dni, String correo,
 			String fechaNacimiento, String grupoSanguineo, String tipoDiabetes,

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="Test"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/Enrique/Downloads/itextpdf-5.5.9.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/Enrique/Documents/Universidad/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.30/appengine-java-sdk-1.9.30/lib/testing/appengine-testing.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enrique/Documents/Universidad/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.30/appengine-java-sdk-1.9.30/lib/impl/appengine-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enrique/Documents/Universidad/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.30/appengine-java-sdk-1.9.30/lib/impl/appengine-api-labs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enrique/Documents/Universidad/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.30/appengine-java-sdk-1.9.30/lib/impl/appengine-api-stubs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enrique/Documents/Universidad/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.30/appengine-java-sdk-1.9.30/lib/impl/appengine-local-runtime.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enrique/Documents/Universidad/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.30/appengine-java-sdk-1.9.30/lib/appengine-tools-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enrique/Documents/Universidad/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.30/appengine-java-sdk-1.9.30/lib/opt/tools/datanucleus/v2/datanucleus-enhancer-3.1.1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

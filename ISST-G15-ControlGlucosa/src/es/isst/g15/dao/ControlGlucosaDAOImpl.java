@@ -35,10 +35,7 @@ public class ControlGlucosaDAOImpl implements ControlGlucosaDao{
 		
 	}
 	
-	@Override
-	public void sacarResultados(){
-		//Hay que implementar este método
-	}
+	
 	
 	@Override
 	public void nuevoUsuario(String nombre, String apellidos, String dni, String correo,
