@@ -43,6 +43,7 @@
 					<ul class="sf-menu" id="example">
 						<li><a href="doctorData.jsp">Consulta de datos</a></li>
 						<li><a href="medicoProfile.jsp">Perfil</a></li>
+						<li><a href="/imprIme" target="_blank">Imprimir</a>
 						<li><a href="logOut">Log Out</a></li>
 					</ul>
 				</div>
